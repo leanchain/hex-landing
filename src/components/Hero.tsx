@@ -30,7 +30,7 @@ export const Hero = () => {
 
         <div className="mx-auto mt-10 max-w-xl font-mono text-sm text-muted-foreground animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <TerminalTyper 
-            text="Hex+ is a dev-first studio crafting high-performance digital products. We write elegant code that scales."
+            text="We are a team of passionate builders dedicated to improving e-commerce through innovative solutions."
             delay={1500}
             speed={30}
           />
@@ -55,22 +55,13 @@ export const Hero = () => {
             learn_more
           </a>
         </div>
-
-        {/* Status indicator */}
-        <div className="mt-16 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs text-muted-foreground backdrop-blur-sm animate-fade-in" style={{ animationDelay: "1s" }}>
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-          </span>
-          Available for new projects
-        </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2 font-mono text-xs text-muted-foreground/50">
-          <span className="tracking-widest">SCROLL</span>
-          <div className="h-8 w-px bg-gradient-to-b from-primary/50 to-transparent animate-pulse" />
+      {/* Terminal cursor blink */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+        <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+          <span>scroll_down</span>
+          <span className="animate-pulse">▼</span>
         </div>
       </div>
     </section>
