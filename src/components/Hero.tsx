@@ -1,101 +1,83 @@
+import { Suspense } from "react";
+import Hexagon3D from "./Hexagon3D";
+import GlitchText from "./GlitchText";
+import TerminalTyper from "./TerminalTyper";
+
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-primary/10 blur-[150px]" />
-        <div className="absolute bottom-1/4 left-1/3 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[120px]" />
+      {/* 3D Background */}
+      <Suspense fallback={null}>
+        <Hexagon3D />
+      </Suspense>
+
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       {/* Scanline overlay */}
       <div className="absolute inset-0 scanline pointer-events-none" />
 
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-[0.04]">
-        <div 
-          className="h-full w-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(hsl(270 91% 65% / 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, hsl(270 91% 65% / 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px'
-          }}
-        />
-      </div>
-
       <div className="container relative z-10 mx-auto px-6 text-center">
-        {/* Hexagon logo */}
-        <div className="mx-auto mb-10 flex h-28 w-28 items-center justify-center animate-float">
-          <svg
-            viewBox="0 0 32 32"
-            className="h-full w-full animate-pulse-glow"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: 'drop-shadow(0 0 20px hsl(270 91% 65% / 0.6))' }}
-          >
-            <defs>
-              <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(280 100% 70%)" />
-                <stop offset="50%" stopColor="hsl(270 91% 65%)" />
-                <stop offset="100%" stopColor="hsl(240 75% 60%)" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M16 2L28 9v14l-12 7L4 23V9l12-7z"
-              fill="hsl(270 91% 65% / 0.1)"
-              stroke="url(#hero-gradient)"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M16 10v12M10 16h12"
-              stroke="url(#hero-gradient)"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
         <div className="animate-fade-in">
-          <p className="font-mono text-sm uppercase tracking-[0.3em] text-primary mb-4">
-            // code beyond convention
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-6 opacity-80">
+            {"// code beyond convention"}
           </p>
         </div>
 
-        <h1 className="font-mono text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in">
-          <span className="text-foreground">We build</span>
-          <br />
-          <span className="text-gradient">the future</span>
+        <h1 className="font-mono text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <span className="text-foreground block mb-2 animate-fade-in">We build</span>
+          <GlitchText 
+            text="the future" 
+            className="text-gradient block animate-fade-in"
+          />
         </h1>
 
-        <p className="mx-auto mt-8 max-w-xl font-mono text-base text-muted-foreground animate-slide-up" style={{ animationDelay: "0.2s" }}>
-          {">"} Hex+ is a dev-first studio crafting high-performance 
-          digital products. We write elegant code that scales.
-        </p>
+        <div className="mx-auto mt-10 max-w-xl font-mono text-sm text-muted-foreground animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <TerminalTyper 
+            text="Hex+ is a dev-first studio crafting high-performance digital products. We write elegant code that scales."
+            delay={1500}
+            speed={30}
+          />
+        </div>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row animate-slide-up" style={{ animationDelay: "0.6s" }}>
           <a
             href="#contact"
-            className="group inline-flex h-12 items-center justify-center rounded-md bg-gradient-primary px-8 font-mono text-sm font-medium text-primary-foreground transition-all glow-primary hover:glow-intense"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-gradient-primary px-8 font-mono text-sm font-medium text-primary-foreground transition-all glow-primary hover:glow-intense"
           >
-            <span className="mr-2 text-primary-foreground/70">$</span>
-            init_project
+            <span className="relative z-10 flex items-center">
+              <span className="mr-2 text-primary-foreground/70">$</span>
+              init_project
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </a>
           <a
             href="#about"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-primary/30 bg-primary/5 px-8 font-mono text-sm font-medium text-foreground transition-all hover:bg-primary/10 hover:border-primary/50"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-primary/30 bg-primary/5 px-8 font-mono text-sm font-medium text-foreground transition-all hover:bg-primary/10 hover:border-primary/50 backdrop-blur-sm"
           >
             <span className="mr-2 text-muted-foreground">#</span>
             learn_more
           </a>
         </div>
+
+        {/* Status indicator */}
+        <div className="mt-16 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs text-muted-foreground backdrop-blur-sm animate-fade-in" style={{ animationDelay: "1s" }}>
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          Available for new projects
+        </div>
       </div>
 
-      {/* Terminal cursor blink */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
-          <span>scroll_down</span>
-          <span className="animate-pulse">▼</span>
+      {/* Scroll hint */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2 font-mono text-xs text-muted-foreground/50">
+          <span className="tracking-widest">SCROLL</span>
+          <div className="h-8 w-px bg-gradient-to-b from-primary/50 to-transparent animate-pulse" />
         </div>
       </div>
     </section>
