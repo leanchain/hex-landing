@@ -1,16 +1,9 @@
-import { Suspense } from "react";
-import Hexagon3D from "./Hexagon3D";
 import GlitchText from "./GlitchText";
 import TerminalTyper from "./TerminalTyper";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* 3D Background */}
-      <Suspense fallback={null}>
-        <Hexagon3D />
-      </Suspense>
-
       {/* Gradient overlays */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent" />
