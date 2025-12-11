@@ -157,3 +157,12 @@
   0% { filter: hue-rotate(0deg); }
   100% { filter: hue-rotate(30deg); }
 }
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-2deg); }
+  40% { transform: skew(2deg); }
+  60% { transform: skew(-1deg); }
+  80% { transform: skew(1deg); }
+  100% { transform: skew(0deg); }
+}
