@@ -21,16 +21,16 @@ export const Hero = () => {
         </div>
 
         <h1 className="font-mono text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="text-foreground block mb-2 animate-fade-in">We build</span>
+          <span className="text-foreground block mb-2 animate-fade-in">Building</span>
           <GlitchText 
-            text="the future" 
+            text="Digital Frontiers" 
             className="text-gradient block animate-fade-in"
           />
         </h1>
 
         <div className="mx-auto mt-10 max-w-xl font-mono text-sm text-muted-foreground animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <TerminalTyper 
-            text="We are a team of passionate builders dedicated to improving e-commerce through innovative solutions."
+            text="Innovative solutions, built for enduring impact."
             delay={1500}
             speed={30}
           />
@@ -42,8 +42,8 @@ export const Hero = () => {
             className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-gradient-primary px-8 font-mono text-sm font-medium text-primary-foreground transition-all glow-primary hover:glow-intense"
           >
             <span className="relative z-10 flex items-center">
-              <span className="mr-2 text-primary-foreground/70">$</span>
-              init_project
+            <span className="mr-2 text-primary-foreground/70">$</span>
+              Explore Our Work
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </a>
@@ -52,16 +52,15 @@ export const Hero = () => {
             className="inline-flex h-12 items-center justify-center rounded-md border border-primary/30 bg-primary/5 px-8 font-mono text-sm font-medium text-foreground transition-all hover:bg-primary/10 hover:border-primary/50 backdrop-blur-sm"
           >
             <span className="mr-2 text-muted-foreground">#</span>
-            learn_more
+            Meet The Team
           </a>
         </div>
       </div>
 
-      {/* Terminal cursor blink */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
-          <span>scroll_down</span>
-          <span className="animate-pulse">▼</span>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="h-10 w-6 rounded-full border-2 border-muted-foreground/30 p-1">
+          <div className="h-2 w-1.5 mx-auto rounded-full bg-muted-foreground/50" />
         </div>
       </div>
     </section>

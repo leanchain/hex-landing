@@ -3,18 +3,18 @@ import { Terminal, Cpu, Zap } from "lucide-react";
 const features = [
   {
     icon: Terminal,
-    title: "clean_code",
-    description: "We write maintainable, scalable code that your team will actually enjoy working with.",
+    title: "enduring_solutions",
+    description: "We build robust digital platforms designed for stability and future growth.",
   },
   {
     icon: Cpu,
-    title: "high_performance",
-    description: "Optimized for speed. Every millisecond counts when building products that matter.",
+    title: "optimized_outcomes",
+    description: "Leverage cutting-edge technology for solutions that deliver measurable results and efficiency.",
   },
   {
     icon: Zap,
-    title: "rapid_delivery",
-    description: "From concept to production fast. We ship quality without compromise.",
+    title: "accelerated_innovation",
+    description: "From concept to deployment, we rapidly transform ideas into tangible, high-quality digital products.",
   },
 ];
 
@@ -24,7 +24,7 @@ export const About = () => {
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-4">
-            {"// what we do"}
+            {"// our philosophy"}
           </p>
           <h2 className="font-mono text-3xl font-bold tracking-tight sm:text-4xl">
             <span className="text-foreground">Why </span>
@@ -32,8 +32,7 @@ export const About = () => {
             <span className="text-foreground">?</span>
           </h2>
           <p className="mt-6 font-mono text-sm text-muted-foreground leading-relaxed">
-            We're developers who understand that great products 
-            come from great code. No bloat, no shortcuts.
+            Driven by a passion for excellence, our team delivers robust solutions that stand the test of time.
           </p>
         </div>
 

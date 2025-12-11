@@ -14,16 +14,16 @@ export const Contact = () => {
           </div>
 
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-4">
-            {"// let's connect"}
+            {"// collaborate with us"}
           </p>
 
           <h2 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
-            <span className="text-foreground">Start a </span>
-            <span className="text-gradient">project</span>
+            <span className="text-foreground">Connect With </span>
+            <span className="text-gradient">Us</span>
           </h2>
 
           <p className="mt-4 font-mono text-sm text-muted-foreground">
-            Got an idea? Let's turn it into reality.
+            Ready to build something impactful? Reach out to our team.
           </p>
 
           <a
